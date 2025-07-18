@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "axios": "^1.10.0",
-<<<<<<< HEAD
+
     "bootstrap": "^5.3.7",
-=======
->>>>>>> 025b6d4038249a5eba9ee3da4700de6a4ae47375
+
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3"

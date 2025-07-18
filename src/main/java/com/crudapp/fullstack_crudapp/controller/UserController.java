@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-<<<<<<< HEAD
 @CrossOrigin("http://localhost:5173")
-=======
-@CrossOrigin("http://localhost:3000")
->>>>>>> 025b6d4038249a5eba9ee3da4700de6a4ae47375
+
 public class UserController {
 
     @Autowired
