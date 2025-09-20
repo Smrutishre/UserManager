@@ -9,16 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-<<<<<<< HEAD
-@CrossOrigin("http://localhost:3000")
-=======
-@CrossOrigin("http://localhost:5173")
-
->>>>>>> 20203971fbb1f8ca6738260f8b2ce29440b48190
+@CrossOrigin("http://localhost:3000") // or "http://localhost:5173"
 public class UserController {
 
     @Autowired
     private UserRepository userRepository;
+
     @PostMapping("/user")
     User newUser(@RequestBody User newUser){
         return userRepository.save(newUser);
@@ -32,7 +28,7 @@ public class UserController {
     @GetMapping("/user/{id}")
     User getUserById(@PathVariable Long id){
         return userRepository.findById(id)
-                .orElseThrow(()-> new UserNotFoundException(id));
+                .orElseThrow(() -> new UserNotFoundException(id));
     }
 
     @PutMapping("/user/{id}")
@@ -43,7 +39,7 @@ public class UserController {
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
                     return userRepository.save(user);
-                }).orElseThrow(()-> new UserNotFoundException(id));
+                }).orElseThrow(() -> new UserNotFoundException(id));
     }
 
     @DeleteMapping("/user/{id}")
@@ -52,7 +48,6 @@ public class UserController {
             throw new UserNotFoundException(id);
         }
         userRepository.deleteById(id);
-        return "User with id " +id+" has been deleted successfully";
+        return "User with id " + id + " has been deleted successfully";
     }
 }
-
